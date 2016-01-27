@@ -73,28 +73,27 @@
 
         if (selector == adminForm) {
 
-            html += "<tr><td>Login</td><td> <input value=\"" + login + "\"></td>" +
-                    "<tr><td>First name</td><td> <input value=\"" + firstName + "\"</td>" +
-                    "<tr><td>First name</td><td> <input value=\"" + lastName + "\"</td>";
+            html += '<tr><td>Login</td><td> <input value=' + login + '></td>' +
+                    '<tr><td>First name</td><td> <input value=' + firstName + '></td>' +
+                    '<tr><td>First name</td><td> <input value=' + lastName + '></td>';
 
         } else if (selector == userForm) {
 
-            html += "<tr><td>Login</td><td> <input value=\"" + login + "\"></td>" +
-                    "<tr><td>Password</td><td> <input value=\"" + password + "\"</td>" +
-                    "<tr><td>First name</td><td> <input value=\"" + firstName + "\"</td>" +
-                    "<tr><td>First name</td><td> <input value=\"" + lastName + "\"</td>" +
-                    "<tr><td>Birthday</td><td> <input value=\"" + birthday + "\"></td>";
+            html += '<tr><td>Login</td><td> <input value=' + login + '></td>' +
+                    '<tr><td>Password</td><td> <input value=' + password + '></td>' +
+                    '<tr><td>First name</td><td> <input value=' + firstName + '></td>' +
+                    '<tr><td>First name</td><td> <input value=' + lastName + '></td>' +
+                    '<tr><td>Birthday</td><td> <input value=' + birthday + '></td>';
 
         }
 
-
-        html += "</table></form><button id =\"button\" onclick='button(\"" + tabName + "\")'>Delete Tab</button>"
+        html += '</table></form><button onclick=deleteTab(\'' + tabName +'\')>Delete Tab</button>';
 
         return html;
 
     }
 
-    function button(tabName){
+    function deleteTab(tabName) {
 
 
         tabsView.removetab(tabName);
@@ -105,7 +104,7 @@
 
     (function ($) {
 
-        jQuery.fn.lightTabs = function (options) {
+        jQuery.fn.lightTabs = function () {
 
             var createTabs = function () {
 
@@ -120,7 +119,7 @@
                     $(tabs).children("ul").children("li").removeClass("active");
                     $(tabs).children("ul").children("li").eq(i).addClass("active");
 
-                }
+                };
 
                 showPage(i);
 
